@@ -14,10 +14,10 @@ interface TestProperties {
     String getConnectionUrl();
 
     @Property("grid.browser.name")
-    @DefaultValue("firefox")
+    @DefaultValue("chrome")
     String getBrowserName();
 
     @Property("grid.browser.version")
-    @DefaultValue("52.0")
+    @DefaultValue("75.0")
     String getBrowserVersion();
 }

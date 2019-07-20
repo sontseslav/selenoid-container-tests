@@ -1,6 +1,8 @@
 package com.aerokube.selenoid.misc;
 
+import org.junit.After;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Rule;
 import org.junit.rules.RuleChain;
 import org.junit.rules.TestRule;
@@ -77,6 +79,15 @@ public abstract class TestBase {
         } catch (UnknownHostException e) {
             LOG.error("Failed to determine host name");
             return "localhost";
+        }
+    }
+
+    @After
+    public void after() throws Exception {
+        Thread.sleep(10000);
+        if (getDriver() != null) {
+            getDriver().quit();
+            webDriverRule = null;
         }
     }
 

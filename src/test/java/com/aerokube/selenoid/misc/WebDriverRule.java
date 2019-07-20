@@ -75,6 +75,8 @@ public class WebDriverRule implements TestRule {
             operaOptions.addArguments("no-sandbox");
             caps.setCapability(OperaOptions.CAPABILITY, operaOptions);
         }
+        caps.setCapability("enableVNC", true);
+        caps.setCapability("enableVideo", true);
         return caps;
     }
 
